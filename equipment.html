@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="src.js"></script>
+<script>
+    $(function(){
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>WWN-Equipment</title>
+</head>
+<body>
+<div id="header"></div>
+<h1>장비</h1>
+<ul class="header-card">
+<table id="weapon_tbl">
+    <caption>무기</caption>
+    <thead>
+    <tr>
+        <th>무기명</th>
+        <th class="stat">피해</th>
+        <th class="stat">충격</th>
+        <th>능력치</th>
+        <th class="stat">거리(ft)</th>
+        <th>특성</th>
+        <th class="stat">가격</th>
+        <th>하중</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>손도끼</td>
+        <td class="stat">1d6</td>
+        <td class="stat">1/AC 15</td>
+        <td>근/민</td>
+        <td class="stat">10/30</td>
+        <td>투척</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>전쟁 도끼</td>
+        <td class="stat">1d10</td>
+        <td class="stat">3/AC 15</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손</td>
+        <td class="stat">50 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>블랙잭</td>
+        <td class="stat">1d4</td>
+        <td class="stat">&mdash;</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td>은밀, 저살상</td>
+        <td class="stat">1 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>장궁</td>
+        <td class="stat">1d8</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">100/600</td>
+        <td>양손, 장전, 고살상</td>
+        <td class="stat">20 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>단궁</td>
+        <td class="stat">1d6</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">50/300</td>
+        <td>양손, 장전, 고살상</td>
+        <td class="stat">20 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>발톱 칼날</td>
+        <td class="stat">1d6</td>
+        <td class="stat">2/AC 13</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td>은밀</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>몽둥이</td>
+        <td class="stat">1d4</td>
+        <td class="stat">&mdash;</td>
+        <td>근/민</td>
+        <td class="stat">10/30</td>
+        <td>투척, 저살상</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>대형 몽둥이</td>
+        <td class="stat">1d10</td>
+        <td class="stat">2/AC 15</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손</td>
+        <td class="stat">1 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>쇠뇌</td>
+        <td class="stat">1d10</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">100/300</td>
+        <td>양손, 느린 장전, 고살상</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>단검</td>
+        <td class="stat">1d4</td>
+        <td class="stat">1/AC 15</td>
+        <td>근/민</td>
+        <td class="stat">30/60</td>
+        <td>은밀, 고살상, 투척</td>
+        <td class="stat">3 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>미늘창</td>
+        <td class="stat">1d10</td>
+        <td class="stat">2/AC 15</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손, 장병</td>
+        <td class="stat">50 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>대형 망치</td>
+        <td class="stat">1d10</td>
+        <td class="stat">2/AC 18</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손</td>
+        <td class="stat">50 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>전쟁 망치</td>
+        <td class="stat">1d8</td>
+        <td class="stat">1/AC 18</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td></td>
+        <td class="stat">30 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>발사기, 대</td>
+        <td class="stat">3d10</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">600/2,400</td>
+        <td>고정, 느린 장전, 관통</td>
+        <td class="stat">10,000 sp</td>
+        <td class="stat">15</td>
+    </tr>
+    <tr>
+        <td>발사기, 소</td>
+        <td class="stat">1d12</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">30/60</td>
+        <td>느린 장전, 관통</td>
+        <td class="stat">1,000 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>발사기, 중</td>
+        <td class="stat">2d8</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">200/600</td>
+        <td>양손, 느린 장전, 관통, 고살상</td>
+        <td class="stat">4,000 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>철퇴</td>
+        <td class="stat">1d6</td>
+        <td class="stat">1/AC 18</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>저살상</td>
+        <td class="stat">15 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>장창</td>
+        <td class="stat">1d8</td>
+        <td class="stat">1/AC 18</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손, 장병</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>방패, 대형</td>
+        <td class="stat">1d6</td>
+        <td class="stat">1/AC 13</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>저살상</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>방패, 소형</td>
+        <td class="stat">1d4</td>
+        <td class="stat">&mdash;</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td>저살상</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>무거운 창</td>
+        <td class="stat">1d10</td>
+        <td class="stat">2/AC 15</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>가벼운 창</td>
+        <td class="stat">1d6</td>
+        <td class="stat">2/AC 13</td>
+        <td>근/민</td>
+        <td class="stat">30/60</td>
+        <td>투척</td>
+        <td class="stat">5 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>투척검</td>
+        <td class="stat">1d4</td>
+        <td class="stat">&mdash;</td>
+        <td>민</td>
+        <td class="stat">30/60</td>
+        <td>다수, 은밀, 투척</td>
+        <td class="stat">3 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>봉</td>
+        <td class="stat">1d6</td>
+        <td class="stat">1/AC 13</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td>양손, 저살상</td>
+        <td class="stat">1 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>스틸레토</td>
+        <td class="stat">1d4</td>
+        <td class="stat">1/AC 18</td>
+        <td>민</td>
+        <td class="stat">&mdash;</td>
+        <td>은밀, 고살상</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>대검</td>
+        <td class="stat">1d10</td>
+        <td class="stat">2/AC 15</td>
+        <td>근</td>
+        <td class="stat">&mdash;</td>
+        <td>양손</td>
+        <td class="stat">250 sp</td>
+        <td class="stat">2</td>
+    </tr>
+    <tr>
+        <td>장검</td>
+        <td class="stat">1d8</td>
+        <td class="stat">2/AC 13</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td></td>
+        <td class="stat">100 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>소검</td>
+        <td class="stat">1d6</td>
+        <td class="stat">2/AC 15</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td></td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+    </tr>
+    <tr>
+        <td>비무장 공격</td>
+        <td class="stat">1d2</td>
+        <td class="stat">&mdash;</td>
+        <td>근/민</td>
+        <td class="stat">&mdash;</td>
+        <td>저살상</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    </tbody>
+</table>
+</ul>
+<div class="listing">
+    <ul>
+        <li><p><b>양손:</b> 이 무기는 사용에 양손이 모두 필요합니다. 원거리 양손 무기는 적이 근접 거리에 있을 때 사용할 수 없습니다.</p></li>
+        <li><p><b>관통:</b> 이 무기는 명중 굴림을 시행할 때 비마법 방어구를 무시합니다.</p></li>
+        <li><p><b>고정:</b> 이 무기는 5분 이상의 시간을 들여 설치해야 사용할 수 있습니다.</p></li>
+        <li><p><b>장병:</b> 이 무기는 10피트 거리의 적에게도 공격을 가할 수 있습니다.
+            다만 퇴각 행동을 강요하거나 원거리 무기를 방어하기 위해서는 여전히 5피트 이내에 있어야 합니다.</p></li>
+        <li><p><b>느린 장전:</b> 주요 행동을 사용해 장전합니다.</p></li>
+        <li><p><b>저살상:</b> 이 무기로 히트 포인트가 0이 되면 사용자의 선에 따라 기절시킬 수 있습니다.</p></li>
+        <li><p><b>다수:</b> 다섯 개를 하나의 물품으로 취급합니다.</p></li>
+        <li><p><b>고살상:</b> 처형 공격을 할 때 육체 내성에 –1의 페널티를 가하고 성공했을 때에도 피해를 두 배로 가합니다.</p></li>
+        <li><p><b>장전:</b> 이 무기는 장전에 이동 행동을 사용합니다.
+            사수의 사격 기술 레벨이 1 이상이라면 단순 행동으로 장전할 수 있습니다.</p></li>
+        <li><p><b>은밀:</b> 평범한 의복 안에 숨기거나 장신구로 위장할 수 있습니다.</p></li>
+        <li><p><b>단발:</b> 장전에 10라운드가 걸리고, 장전 중 적이 근접 공격을 시도하면 허사가 됩니다.</p></li>
+        <li><p><b>투척:</b> 근접 무기로 사용할 수도 있지만, 투척할 수 있습니다. 이때 충격 피해는 없습니다.
+            근접 거리의 적에게 투척을 시도할 수도 있지만, 명중 굴림에 –4의 페널티를 받습니다.</p></li>
+    </ul>
+</div>
+<ul class="header-card">
+<table id="armorTable">
+    <caption>방어구</caption>
+    <thead>
+    <tr>
+        <th>갑옷 종류</th>
+        <th>AC</th>
+        <th>가격</th>
+        <th>하중</th>
+        <th>분류</th>
+        <th>잠행 페널티</th>
+        <th>운동 페널티</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>갑옷 없음</td>
+        <td class="stat">10</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>전쟁 의복</td>
+        <td class="stat">11</td>
+        <td class="stat">5 sp</td>
+        <td class="stat">0</td>
+        <td>경갑</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>가죽 외투</td>
+        <td class="stat">12</td>
+        <td class="stat">50 sp</td>
+        <td class="stat">0</td>
+        <td>경갑</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>아마포 흉갑</td>
+        <td class="stat">13</td>
+        <td class="stat">20 sp</td>
+        <td class="stat">1</td>
+        <td>경갑</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>전쟁용 외투</td>
+        <td class="stat">14</td>
+        <td class="stat">50 sp</td>
+        <td class="stat">3</td>
+        <td>경갑</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>부분 갑옷</td>
+        <td class="stat">14</td>
+        <td class="stat">100 sp</td>
+        <td class="stat">2</td>
+        <td>경갑</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>사슬 조끼</td>
+        <td class="stat">14</td>
+        <td class="stat">250 sp</td>
+        <td class="stat">1</td>
+        <td>평갑</td>
+        <td class="stat">-1</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>흉갑과 견갑</td>
+        <td class="stat">15</td>
+        <td class="stat">250 sp</td>
+        <td class="stat">2</td>
+        <td>평갑</td>
+        <td class="stat">-2</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>비늘 갑옷</td>
+        <td class="stat">16</td>
+        <td class="stat">500 sp</td>
+        <td class="stat">3</td>
+        <td>평갑</td>
+        <td class="stat">-3</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>사슬 갑옷</td>
+        <td class="stat">16</td>
+        <td class="stat">750 sp</td>
+        <td class="stat">2</td>
+        <td>중갑</td>
+        <td class="stat">-2</td>
+        <td class="stat">-2</td>
+    </tr>
+    <tr>
+        <td>판갑</td>
+        <td class="stat">17</td>
+        <td class="stat">1,000 sp</td>
+        <td class="stat">2</td>
+        <td>중갑</td>
+        <td class="stat">-2</td>
+        <td class="stat">-2</td>
+    </tr>
+    <tr>
+        <td>합성 갑옷</td>
+        <td class="stat">19</td>
+        <td class="stat">2,000 sp</td>
+        <td class="stat">3</td>
+        <td>중갑</td>
+        <td class="stat">-3</td>
+        <td class="stat">-3</td>
+    </tr>
+    <tr>
+        <td>판금 갑옷</td>
+        <td class="stat">16</td>
+        <td class="stat">2,000 sp</td>
+        <td class="stat">3</td>
+        <td>중갑</td>
+        <td class="stat">-3</td>
+        <td class="stat">-3</td>
+    </tr>
+    <tr>
+        <td>소형 방패</td>
+        <td class="stat">13/+1</td>
+        <td class="stat">20 sp</td>
+        <td class="stat">1</td>
+        <td>방패</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    <tr>
+        <td>대형 방패</td>
+        <td class="stat">14/+1</td>
+        <td class="stat">10 sp</td>
+        <td class="stat">1</td>
+        <td>방패</td>
+        <td class="stat">&mdash;</td>
+        <td class="stat">&mdash;</td>
+    </tr>
+    </tbody>
+</table>
+</ul>
+<div class="listing">
+    <ul>
+        <li><p><b>방패:</b> 방패 이상의 AC를 제공하는 방어구와 방패를 동시에 착용하고 있다면 방패는 AC에 +1을 더해 줍니다.
+            방패를 든 캐릭터는 라운드의 첫 충격 피해를 무시합니다.</p></li>
+    </ul>
+</div>
+
+<div id="footer"></div>
+</body>
+</html>

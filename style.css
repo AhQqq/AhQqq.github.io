@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Serif KR', serif;
+    word-break: keep-all;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+h2 {
+    margin-top: 50px
+}
+
+.title {
+    display: block;
+    font-size: 3em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.nav-bar{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7ch, 3fr));
+    grid-gap: 0.3rem;
+    max-width: 100vw;
+    width: 90ch;
+    padding: 2px 16px;
+
+}
+
+.listing{
+    margin: 0;
+    grid-gap: 0.3rem;
+    max-width: 100vw;
+    width: 90ch;
+    padding: 2px 16px;
+
+}
+
+a {
+    text-decoration: none;
+    padding: 1rem;
+    color: DarkSlateGray;
+    font-size: 1.25rem;
+    text-align: center;
+
+}
+
+.header-card{
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 3fr));
+    grid-gap: 1.5rem;
+    max-width: 100vw;
+    width: 120ch;
+    padding: 2px 16px;
+    text-indent: 30px;
+}
+
+.card-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 1.5rem;
+    max-width: 100vw;
+    width: 120ch;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    padding: 2px 16px;
+
+}
+
+.card h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.card h4{
+    text-align: center;
+}
+
+.card h5{
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.card #select-div{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card select{
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    max-width: 80em;
+}
+
+table caption {
+    font-size: xx-large;
+    padding: 0.5em;
+    color: DarkSlateGray;
+}
+
+th {
+    background-color: WhiteSmoke;
+    border: 1px solid WhiteSmoke;
+    color: DarkSlateGray;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.5em 0.5em 0.5em 0.5em ;
+}
+
+strong {
+    color: DarkSlateGray;
+}
+
+table tbody tr:nth-child(even) {
+    background: WhiteSmoke;
+}
+
+td {
+    padding: 0.0em 0.6em;
+    border: 1px solid WhiteSmoke;
+    text-align: left;
+}
+
+td.stat, th.stat {
+    text-align: center;
+}
+
+tfoot ul {
+    list-style-type: none;
+}
+
+select {
+    text-align: center;
+    font-size: 1rem;
+
+}
+
+option {
+    text-align: center;
+    font-size: 1rem;
+}
+
+footer{
+    margin-top: 50px;
+
+}
