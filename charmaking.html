@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>WWN-Character-Making</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="charmaking.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+            setInputLength()
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<h1>1레벨 캐릭터 생성</h1>
+<div class="char-sheet">
+    <div class="name-box">
+        <label for="name" id="pc-label">이름: </label>
+        <input type="text" id="pc-name" >
+        <br>
+        <label for="name" id="pl-label">플레이어: </label>
+        <input type="text" id="pl-name" size="16">
+        <br>
+        <label for="name" id="hl-label">고향: </label>
+        <input type="text" id="hl-name">
+        <br>
+        <label for="name" id="oc-label">직업: </label>
+        <input type="text" id="oc-name">
+        <br>
+        <label for="name" id="rc-label">종족: </label>
+        <input type="text" id="rc-name">
+        <br>
+        <label for="name" id="gl-label">목적: </label>
+        <input type="text" id="gl-name">
+        <br>
+        <label>배경: </label> <p id="bg"></p>
+        <p>설명: </p> <textarea type="text" id="bg-desc" rows="3" cols="28"></textarea>
+        <br>
+        <label>클래스: </label>
+        <p>이점: </p> <textarea type="text" id="cl-desc" rows="3" cols="28"></textarea>
+    </div>
+    <div class="level-box">
+        <p class="attribute" id="char-sheet-level">레벨: 1</p>
+        <p class="attribute" id="char-sheet-exp">경험치: 0</p>
+        <hr>
+        <p>기본 공격 보너스:</p>
+        <p>근접 공격 보너스:</p>
+        <p>장거리 공격 보너스:</p>
+        <p>우선권 보너스:</p>
+    </div>
+    <div class="readied-box">
+        <h3>준비된 아이템</h3>
+    </div>
+    <div class="focus-box">
+        <h3>포커스</h3>
+    </div>
+    <div class="armor-box">
+        <h3>armor</h3>
+    </div>
+    <div class="attribute-box">
+        <div class="attribute-single" id="strbox">
+            <span class="attribute" id="char-sheet-str">힘: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-str-val">14</span>
+            <span class="attribute-mod" id="char-sheet-str-mod">(+1)</span>
+        </div>
+        <div class="attribute-single" id="dexbox">
+            <span class="attribute" id="char-sheet-dex">민첩: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-dex-val">14</span>
+            <span class="attribute-mod" id="char-sheet-dex-mod">(+1)</span>
+        </div>
+        <div class="attribute-single" id="conbox">
+            <span class="attribute" id="char-sheet-con">건강: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-con-val">14</span>
+            <span class="attribute-mod" id="char-sheet-con-mod">(+1)</span>
+        </div>
+        <div class="attribute-single" id="intbox">
+            <span class="attribute" id="char-sheet-int">지능: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-int-val">14</span>
+            <span class="attribute-mod" id="char-sheet-int-mod">(+1)</span>
+        </div>
+        <div class="attribute-single" id="wisbox">
+            <span class="attribute" id="char-sheet-wis">지혜: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-wis-val">14</span>
+            <span class="attribute-mod" id="char-sheet-wis-mod">(+1)</span>
+        </div>
+        <div class="attribute-single" id="chabox">
+            <span class="attribute" id="char-sheet-cha">매력: </span>
+            <br>
+            <span class="attribute-val" id="char-sheet-cha-val">14</span>
+            <span class="attribute-mod" id="char-sheet-cha-mod">(+1)</span>
+        </div>
+    </div>
+    <div class="hit-point-box">
+        <span class="attribute" id="char-sheet-hp">히트 포인트: </span>
+        <p class="attribute-val" id="char-sheet-hp-val">14</p>
+        <span class="attribute" id="char-sheet-ss">기관계 부하: </span>
+        <p class="attribute-val" id="char-sheet-ss-val">14</p>
+    </div>
+    <div class="weapon-box">
+        <p>weapons</p>
+    </div>
+    <div class = "skill-box">
+        <h3>기술</h3>
+        <div class="skills">
+            <p/>
+            <span class="skill" id="char-sheet-admin">행정: </span>
+            <span class="attribute-val" id="char-sheet-admin-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-alch">연금: </span>
+            <span class="attribute-val" id="char-sheet-alch-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">연결: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">설득: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">제작: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">운동: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">치료: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">지식: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">지휘: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">마법: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">감지: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">공연: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">기도: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">격투: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">기승: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">항해: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">사격: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">잠행: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">접전: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">생존: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">거래: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+            <p/>
+            <span class="skill" id="char-sheet-conn">작업: </span>
+            <span class="attribute-val" id="char-sheet-conn-val">-1</span>
+        </div>
+    </div>
+    <div class="saves-box">
+        <span class="attribute" id="char-sheet-ps">육체: </span>
+        <span class="attribute-val" id="char-sheet-ps-val">14</span>
+        <br>
+        <span class="attribute" id="char-sheet-es">회피: </span>
+        <span class="attribute-val" id="char-sheet-es-val">14</span>
+        <br>
+        <span class="attribute" id="char-sheet-ms">정신: </span>
+        <span class="attribute-val" id="char-sheet-ms-val">14</span>
+        <br>
+        <span class="attribute" id="char-sheet-ls">행운: </span>
+        <span class="attribute-val" id="char-sheet-ls-val">14</span>
+    </div>
+</div>
+
+
+
+
+<button type="button" class="collapsible">1. 캐릭터 능력치 정하기 </button>
+<div class="content">
+    <p>캐릭터에게는 6개의 능력치 - <i>힘</i>, <i>민첩</i>, <i>건강</i>, <i>지능</i>, <i>지혜</i>, <i>매력</i>이 있습니다.
+        이들은 캐릭터의 능력을 어느정도 대변하지만 전부는 아니며, 캐릭터의 모험에 따라 바뀔 수 있습니다.
+        순수한 능력치에 따른 기본 수정치는 -2부터 2까지 가능하며, 주로 -1과 1 사이입니다.</p>
+    <div class="centerize-buttons">
+        <div class="statName">힘</div>
+        <div class="statName">민첩</div>
+        <div class="statName">건강</div>
+        <div class="statName">지능</div>
+        <div class="statName">지혜</div>
+        <div class="statName">매력</div>
+        <div class="attval" id="strVal">-</div>
+        <div class="attval" id="dexVal">-</div>
+        <div class="attval" id="conVal">-</div>
+        <div class="attval" id="intVal">-</div>
+        <div class="attval" id="wisVal">-</div>
+        <div class="attval" id="chaVal">-</div>
+    </div>
+    <div class="centerize-less-pad">
+        <button type="button" class="rollStat" onclick="genStats()">굴리기</button>
+    </div>
+    <h2></h2>
+    <p>능력치를 다 정했으면 능력치 중 하나를 14로 바꿀 수 있습니다.</p>
+    <div class="centerize-less-pad">
+        <select class="changeStats" onchange="changeTo14()">
+            <option value="0" selected>능력치를 선택하세요.</option>
+            <option value="1">힘</option>
+            <option value="2">민첩</option>
+            <option value="3">건강</option>
+            <option value="4">지능</option>
+            <option value="5">지혜</option>
+            <option value="6">매력</option>
+        </select>
+    </div>
+</div>
+
+<button type="button" class="collapsible">2. 배경 선택하기 </button>
+<div class="content">
+  <p>캐릭터의 과거 경험을 가장 잘 대변할 수 있는 배경을 선택하세요.</p>
+  <div class="centerize-less-pad"> 
+    <select class="bgs">
+      <option value="0" selected>배경을 선택하세요.</option>
+      <option value="1">장인</option>
+      <option value="2">야만인</option>
+      <option value="3">마부</option>
+      <option value="4">화류</option>
+      <option value="5">범죄자</option>
+      <option value="6">사냥꾼</option>
+      <option value="7">일꾼</option>
+      <option value="8">상인</option>
+      <option value="9">귀족</option>
+      <option value="10">유목민</option>
+      <option value="11">농노</option>
+      <option value="12">공연자</option>
+      <option value="13">의사</option>
+      <option value="14">사제</option>
+      <option value="15">선원</option>
+      <option value="16">학자</option>
+      <option value="17">노예</option>
+      <option value="18">병사</option>
+      <option value="19">건달</option>
+      <option value="20">방랑자</option>
+    </select>
+  </div>
+</div>
+
+<button type="button" class="collapsible">3. 클래스 정하기 </button>
+<div class="content">
+    <select id="class1">
+        <option value="0" disabled selected>클래스를 선택하세요.</option>
+        <option value="10">전사</option>
+        <option value="11">항마사</option>
+        <option value="20">전문가</option>
+        <option value="21">음유시인</option>
+        <option value="22">현인</option>
+        <option value="300">고마법사</option>
+        <option value="301">원소술사</option>
+        <option value="302">사령술사</option>
+        <option value="303">치유사</option>
+        <option value="304">구도자</option>
+        <option value="305">소언사</option>
+        <option value="306">변신술사</option>
+        <option value="307">결투가</option>
+        <option value="308">야수조련사</option>
+        <option value="309">사제</option>
+        <option value="310">생각 귀족</option>
+        <option value="311">저주받은 자</option>
+    </select>
+    <select id="class2">
+        <option value="0" disabled selected>클래스를 선택하세요.</option>
+        <option value="10">전사</option>
+        <option value="11">항마사</option>
+        <option value="20">전문가</option>
+        <option value="21">음유시인</option>
+        <option value="22">현인</option>
+        <option value="300">고마법사</option>
+        <option value="301">원소술사</option>
+        <option value="302">사령술사</option>
+        <option value="303">치유사</option>
+        <option value="304">구도자</option>
+        <option value="305">소언사</option>
+        <option value="306">변신술사</option>
+        <option value="307">결투가</option>
+        <option value="308">야수조련사</option>
+        <option value="309">사제</option>
+        <option value="310">생각 귀족</option>
+        <option value="311">저주받은 자</option>
+    </select>
+</div>
+<button type="button" class="collapsible">5. 포커스 정하기 </button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button type="button" class="collapsible">6. 기교 및 주문 정하기 </button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button type="button" class="collapsible">7. HP 굴리기 </button>
+<div class="content">
+  <p>클래스에 따라 HP를 굴립니다. 이후 레벨이 오를 때마다 굴립니다.</p>
+  <div class="centerize-less-pad"> 
+    <button type="button" class="rollStat">굴리기</button>
+  </div>
+</div>
+<button type="button" class="collapsible">8. 장비 선택하기 </button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button type="button" class="collapsible">9. 마무리 </button>
+<div class="content">
+  <p>캐릭터 이름, 종족, 목표, 혹은 기타 특이사항을 정하십시오.</p>
+</div>
+<script>
+    var coll = $(".collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+</script>
+<div id="footer"></div>
+</body>
