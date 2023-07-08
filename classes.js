@@ -79,7 +79,7 @@ function setupClassTable(){
         abi_id.push("s30201")
 
     } else if (c1 === 10 && c2 === 303){
-        classTitle = "모험가 (전사/치유사)"
+        classTitle = "모험가 (전사/치료사)"
         hd_col = warrior_hp
         ab_col = to_seven_ab
         focus_col = focus_war
@@ -224,7 +224,7 @@ function setupClassTable(){
         abi_id.push("s2001","s30201")
 
     } else if (c1 === 20 && c2 === 303){
-        classTitle = "모험가 (전문가/치유사)"
+        classTitle = "모험가 (전문가/치료사)"
         hd_col = expert_hp
         ab_col = to_five_ab
         focus_col = focus_exp
@@ -332,7 +332,7 @@ function setupClassTable(){
         abi_id.push("s2100","s30201")
 
     } else if (c1 === 21 && c2 === 303){
-        classTitle = "모험가 (음유시인/치유사)"
+        classTitle = "모험가 (음유시인/치료사)"
         hd_col = expert_hp
         ab_col = to_five_ab
         focus_col = focus_exp
@@ -440,7 +440,7 @@ function setupClassTable(){
         abi_id.push("s2200","s30201")
 
     } else if (c1 === 22 && c2 === 303){
-        classTitle = "모험가 (현인/치유사)"
+        classTitle = "모험가 (현인/치료사)"
         hd_col = expert_hp
         ab_col = to_five_ab
         focus_col = focus_exp
@@ -549,7 +549,7 @@ function setupClassTable(){
         abi_id.push("s30001","s30201")
 
     } else if (c1 === 300 && c2 === 303){
-        classTitle = "모험가 (고마법사/치유사)"
+        classTitle = "모험가 (고마법사/치료사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -639,7 +639,7 @@ function setupClassTable(){
         abi_id.push("s30101","s30201")
 
     } else if (c1 === 301 && c2 === 303){
-        classTitle = "모험가 (원소술사/치유사)"
+        classTitle = "모험가 (원소술사/치료사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -719,7 +719,7 @@ function setupClassTable(){
         abi_id.push("s30200")
 
     } else if (c1 === 302 && c2 === 303){
-        classTitle = "모험가 (사령술사/치유사)"
+        classTitle = "모험가 (사령술사/치료사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -791,7 +791,7 @@ function setupClassTable(){
         abi_id.push("s30201","s31100")
         
     } else if (c1 === 303 && c2 === 304){
-        classTitle = "모험가 (치유사/구도자)"
+        classTitle = "모험가 (치료사/구도자)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -800,7 +800,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30400")
 
     } else if (c1 === 303 && c2 === 305){
-        classTitle = "모험가 (치유사/소언사)"
+        classTitle = "모험가 (치료사/소언사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -809,7 +809,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30501")
 
     } else if (c1 === 303 && c2 === 306){
-        classTitle = "모험가 (치유사/변신술사)"
+        classTitle = "모험가 (치료사/변신술사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -818,7 +818,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30600")
 
     } else if (c1 === 303 && c2 === 307){
-        classTitle = "모험가 (치유사/결투가)"
+        classTitle = "모험가 (치료사/결투가)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -827,7 +827,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30700")
 
     } else if (c1 === 303 && c2 === 308){
-        classTitle = "모험가 (치유사/야수조련사)"
+        classTitle = "모험가 (치료사/야수조련사)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -836,7 +836,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30800")
 
     } else if (c1 === 303 && c2 === 309){
-        classTitle = "모험가 (치유사/사제)"
+        classTitle = "모험가 (치료사/사제)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -845,7 +845,7 @@ function setupClassTable(){
         abi_id.push("s30300","s30900")
 
     } else if (c1 === 303 && c2 === 310){
-        classTitle = "모험가 (치유사/생각 귀족)"
+        classTitle = "모험가 (치료사/생각 귀족)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -854,7 +854,7 @@ function setupClassTable(){
         abi_id.push("s30300","s31000")
 
     } else if (c1 === 303 && c2 === 311){
-        classTitle = "모험가 (치유사/저주받은 자)"
+        classTitle = "모험가 (치료사/저주받은 자)"
         hd_col = mage_hp
         ab_col = to_two_ab
         focus_col = focus_mage
@@ -1244,11 +1244,11 @@ function genClassAbilities(ids){
             block.append($('<li><p><b>•사령술사 기교</b></p></li>'));
 
         } else if (id === "s30300") {
-            block.append($('<h3>치유사 시작 혜택</h3>'));
+            block.append($('<h3>치료사 시작 혜택</h3>'));
             block.append($('<h4>Benefits of Healer</h4>'))
             block.append($('<ul></ul>'));
             block.append($('<li><p><b>•치료 기술</b> +1</p></li>'));
-            block.append($('<li><p><b>•치유사 기교</b></p></li>'));
+            block.append($('<li><p><b>•치료사 기교</b></p></li>'));
 
         } else if (id === "s30400") {
             block.append($('<h3>구도자 시작 혜택</h3>'));
@@ -1348,7 +1348,7 @@ function blockClassChoice(id, to_block_select){
         <option value="300">마법사 - 고마법사</option>
         <option value="301">마법사 - 원소술사</option>
         <option value="302">마법사 - 사령술사</option>
-        <option value="303">마법사 - 치유사</option>
+        <option value="303">마법사 - 치료사</option>
         <option value="304">마법사 - 구도자</option>
         <option value="305">마법사 - 소언사</option>
         <option value="306">마법사 - 변신술사</option>
@@ -1571,7 +1571,7 @@ let partial_necro_table = [['사령술사 기교','최대 주문 레벨','하루
     ['자유 1','1','1','3'], ['-', '1', '2', '4' ], ['-', '2', '2', '5'], ['자유 1', '2', '3', '6'],
     ['-', '2', '3', '7'], ['-', '2', '3', '7'], ['자유 1', '3','4','8'], ['-', '3', '4', '9']]
 
-let healer_table = [['치유사 기교'], ['<i>치유의 손길</i>, 자유 1'], ['자유 1'], ['-'], ['자유 1'], ['자유 1'],
+let healer_table = [['치료사 기교'], ['<i>치료의 손길</i>, 자유 1'], ['자유 1'], ['-'], ['자유 1'], ['자유 1'],
     ['자유 1'], ['-'], ['자유 1'], ['-'], ['자유 1']]
 
 let vowed_table = [['격투 명중 보너스','격투 피해','격투 충격','구도자 기교'],
@@ -1632,7 +1632,7 @@ let wise_table = [['비마법적 사제','마녀','예언자','기인'],
     ['<i>신성한 존엄성</i>','<i>공포와 경외</i>','<i>학식</i> 혹은 <i>민중의 친구</i>', '자유 1'],
     ['<i>공포와 경외</i> 혹은 <i>민중의 친구</i>','<i>저주와 축복</i> 중 1','<i>예지 기교</i> 중 1','-'],
     ['-','-','-','자유 1'],
-    ['<i>숙련된</i> 혹은 <i>학식</i>','<i>치유사</i> 혹은 <i>저주와 축복</i> 중 1','<i>예지 기교</i> 중 1','-'],
+    ['<i>숙련된</i> 혹은 <i>학식</i>','<i>의사</i> 혹은 <i>저주와 축복</i> 중 1','<i>예지 기교</i> 중 1','-'],
     ['<i>개인적 비처벌성</i>','<i>예지 기교</i> 중 1','<i>예지 기교</i> 중 1','자유 1'],
     ['<i>연줄</i> 혹은 <i>민중의 친구</i>','<i>숙련된</i>', '<i>숙련된</i> 혹은 <i>연줄</i>', '-'],
     ['-','-','-','자유 1'],
